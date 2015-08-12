@@ -17,7 +17,7 @@ Adafruit_GPS GPS(&mySerial);
 
 File logfile;
 char filename[15];
-unsigned long INTERVAL = 2000;
+unsigned long INTERVAL = 1000;
 unsigned long acc = 0.0;
 float raw = 0.0;
 float filtered = 1.0;
@@ -154,7 +154,7 @@ void loop()                     // run over and over again
   if (millis() - timer > INTERVAL) {
        
     raw = acc / (timer * 10.0); // Shinyei reading expressed as percentage
-    if (isnan(raw)) raw = 0.0;  // nan creates propagating error
+    if (isnan(raw) || isinf(raw)) raw = 0.0;  // nan creates propagating error
     filtered = ALPHA * filtered + (1 - ALPHA) * raw; // smooth data
     
     voc = analogRead(A0) * (5000.0 / 1023.0); // get VOC sensor reading
