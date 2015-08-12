@@ -1,6 +1,10 @@
-// Test code for Adafruit GPS modules using MTK3329/MTK3339 driver
-// Reads data from GPS, MQ-135 VOC sensor, and Shinyei PPD42 dust sensor
-// v. 1.0 (AF 2015-08-05)
+// -------------------------------------------------------------------------
+// bams: Bicycle-based Air Monitoring System
+// v. 1.0 | AF | 2015-08-11
+// -------------------------------------------------------------------------
+// Contains code for Adafruit GPS modules using MTK3329/MTK3339 driver
+// and reads data from GPS, MQ-135 VOC sensor, and Shinyei PPD42 dust sensor
+// -------------------------------------------------------------------------
 
 #include <SPI.h>
 #include <Adafruit_GPS.h>
